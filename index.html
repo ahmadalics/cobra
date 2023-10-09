@@ -13,11 +13,73 @@
         body{
             overflow: hidden;
         }
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 10px;
+            position: relative;
+    top: 653px;
+        }
+        button {
+    margin: 0 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+
     </style>
 </head>
 <body>
-    <p>Test</p>
+    <p>Snake Game</p>
     <canvas id="canvas" width="400" height="400"></canvas>
+    <div class="button-container">
+    <button id="up">Up</button>
+    <button id="down">Down</button>
+    <button id="left">Left</button>
+    <button id="right">Right</button>
+
+</div>
+    <script src="snake.js"></script>
+    <script>
+        // Set up the button controls
+        document.getElementById('up').addEventListener('click', function () {
+          if (direction !== 'down') {
+            direction = 'up';
+          }
+        });
+        document.getElementById('down').addEventListener('click', function () {
+          if (direction !== 'up') {
+            direction = 'down';
+          }
+        });
+        document.getElementById('left').addEventListener('click', function () {
+          if (direction !== 'right') {
+            direction = 'left';
+          }
+        });
+        document.getElementById('right').addEventListener('click', function () {
+          if (direction !== 'left') {
+            direction = 'right';
+          }
+        });
+
+       
+    </script>
     <script src="snake.js"></script>
 </body>
 </html>

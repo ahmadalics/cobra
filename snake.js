@@ -24,6 +24,8 @@ document.addEventListener('touchend', function (e) {
     }
   }
 });
+
+
 // Set up the canvas
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
@@ -101,7 +103,10 @@ function gameLoop() {
       gameover = true;
     }
   }
+if( gameover == true){
+  alert('Game over!');
 
+}
 
     // Draw the game
    ctx.clearRect(0, 0, width, height);
